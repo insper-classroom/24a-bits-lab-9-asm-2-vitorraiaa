@@ -16,31 +16,25 @@ jobs:
       uses: actions/checkout@v4
     - name: jmp1
       id: jmp1
-      uses: education/autograding-command-grader@v1
+      uses: education/autograding-python-grader@v1
       with:
-        test-name: jmp1
-        setup-command: sudo -H pip3 install -r requirements.txt
-        command: pytest -k abs
         timeout: 10
         max-score: 0
+        setup-command: sudo -H pip3 install -r requirements.txt
     - name: jmp2
       id: jmp2
-      uses: education/autograding-command-grader@v1
+      uses: education/autograding-python-grader@v1
       with:
-        test-name: jmp2
-        setup-command: ''
-        command: pytest -k max
         timeout: 10
         max-score: 1
+        setup-command: ''
     - name: jmp3
       id: jmp3
-      uses: education/autograding-command-grader@v1
+      uses: education/autograding-python-grader@v1
       with:
-        test-name: jmp3
-        setup-command: ''
-        command: pytest -k mult
         timeout: 10
         max-score: 1
+        setup-command: ''
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
       env:
